@@ -1,5 +1,17 @@
 var po = org.polymaps;
 
+/* Mile */
+var mile = tsv("mile.tsv")
+    .key(function(l) { return l[1]; })
+    .value(function(l) { return l[2].replace(/,/g, ""); })
+    .map();
+    
+/* Suzana. */
+var suzana = tsv("suzana.tsv")
+    .key(function(l) { return l[1]; })
+    .value(function(l) { return l[2].replace(/,/g, ""); })
+    .map();
+
 /* Country name -> population (July 2010 Est.). */
 var population = tsv("population.tsv")
     .key(function(l) { return l[1]; })
@@ -23,7 +35,7 @@ map.add(po.image()
     .url("http://s3.amazonaws.com/com.modestmaps.bluemarble/{Z}-r{Y}-c{X}.jpg"));
 
 map.add(po.geoJson()
-    .url("world.json")
+    .url("main.json")
     .tile(false)
     .zoom(3)
     .on("load", load));
@@ -36,13 +48,16 @@ map.container().setAttribute("class", "YlOrRd");
 /** Set feature class and add tooltip on tile load. */
 function load(e) {
   for (var i = 0; i < e.features.length; i++) {
+//      console.log(mile['Vkupno']);
     var feature = e.features[i],
         n = feature.data.properties.name,
-        v = internet[n] / population[n];
+        v = mile[n] / mile['Vkupno'];
+//        v = internet[n] / population[n];
     n$(feature.element)
         .attr("class", isNaN(v) ? null : "q" + ~~(v * 9) + "-" + 9)
       .add("svg:title")
         .text(n + (isNaN(v) ? "" : ":  " + percent(v)));
+console.log(n$(feature.element));
   }
 }
 
