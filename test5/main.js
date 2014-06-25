@@ -7,10 +7,14 @@ var map = po.map()
     
 map.add(po.image()
     .url(po
-            .url("https://{S}.tiles.mapbox.com/v3/mapbox.geography-class/{Z}/{X}/{Y}.png")
+            .url("http://a.tiles.mapbox.com/v3/mile89janev.ihdmc2k1/{Z}/{X}/{Y}.png")
             .hosts(["a.", "b.", "c.", ""])
         )
     );
+    
+map.add(po.geoJson()
+    .url("https://a.tiles.mapbox.com/v3/mile89janev.ihdmc2k1/markers.geojson")
+    .id("state"));
     
 //map.add(po.image()
 //    .url(po

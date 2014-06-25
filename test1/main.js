@@ -32,7 +32,9 @@ var map = po.map()
     .add(po.interact());
 
 map.add(po.image()
-    .url("http://s3.amazonaws.com/com.modestmaps.bluemarble/{Z}-r{Y}-c{X}.jpg"));
+//        .url("http://s3.amazonaws.com/com.modestmaps.bluemarble/{Z}-r{Y}-c{X}.jpg")
+        .url("http://localhost/polymaps/map.png")
+    );
 
 map.add(po.geoJson()
     .url("main.json")
