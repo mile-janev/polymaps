@@ -4,8 +4,10 @@
 <meta charset=utf-8 />
 <title>A simple map</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.js'></script>
 <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.css' rel='stylesheet' />
+<script type="text/javascript" src="../polymaps.js"></script>
 
 <style>
   body { margin:0; padding:0; }
@@ -13,10 +15,7 @@
 </style>
 </head>
 <body>
-<div id='map'></div>
-<script>
-var map = L.mapbox.map('map', 'mile89janev.ihdmc2k1')
-    .setView([40, -74.50], 9);
-</script>
+    <div id="map"></div>
+    <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
