@@ -14,8 +14,19 @@ map.add(po.image()
     
 map.add(po.geoJson()
     .url("https://a.tiles.mapbox.com/v3/mile89janev.ihdmc2k1/markers.geojson")
-    .id("state"));
+    .on("load", load)
+    );
     
+map.add(po.compass()
+    .pan("none"));
+    
+function load(e) {
+  for (var i = 0; i < e.features.length; i++) {
+    var feature = e.features[i];
+    feature.element.setAttribute("id", "id"+i);
+  }
+}
+
 //map.add(po.image()
 //    .url(po
 //            .url("http://{S}tile.cloudmade.com/1a1b06b230af4efdbb989ea99e9841af/998/256/{Z}/{X}/{Y}.png")
