@@ -13,7 +13,7 @@ map.add(po.image()
     );
     
 map.add(po.geoJson()
-    .url("https://a.tiles.mapbox.com/v3/mile89janev.ihdmc2k1/markers.geojson")
+    .url("json/mile.geojson")
     .on("load", load)
     );
     
