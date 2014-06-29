@@ -13,23 +13,27 @@ map.add(po.image()
     );
     
 map.add(po.geoJson()
-    .url("json/mile.geojson")
+    .url("json/json.geojson")
     .on("load", load)
     );
     
 map.add(po.compass()
     .pan("none"));
     
+/* Mile */
+var mile = tsv("json/mile.tsv")
+    .key(function(l) { return l[1]; })
+    .value(function(l) { return l[2].replace(/,/g, ""); })
+    .map();
+    
 function load(e) {
   for (var i = 0; i < e.features.length; i++) {
-    var feature = e.features[i];
+    
+    var feature = e.features[i],
+        region = feature.data.properties.title;
+//    console.log(mile[region]);
+    console.log(mile['Vkupno']);
     feature.element.setAttribute("id", "id"+i);
   }
 }
 
-//map.add(po.image()
-//    .url(po
-//            .url("http://{S}tile.cloudmade.com/1a1b06b230af4efdbb989ea99e9841af/998/256/{Z}/{X}/{Y}.png")
-//            .hosts(["a.", "b.", "c.", ""])
-//        )
-//    );
