@@ -30,22 +30,36 @@ var mile = tsv("json/mile.tsv")
     .value(function(l) { return l[2].replace(/,/g, ""); })
     .map();
     
-function load(e) {
-  for (var i = 0; i < e.features.length; i++) {
+/* Suzana */
+var suzana = tsv("json/suzana.tsv")
+    .key(function(l) { return l[1]; })
+    .value(function(l) { return l[2].replace(/,/g, ""); })
+    .map();
     
+var orderArray = new Array();
+
+function load(e) {
+    
+  for (var i = 0; i < e.features.length; i++) {
     var feature = e.features[i],
-        region = feature.data.properties.title
-        coeficient = mile[region]/mile['Vkupno'];
+        region = feature.data.properties.title;
         
-//        feature.element.setAttribute("class", "q" + ~~(coeficient*8) + "-" + 8);
+        orderArray.push({name: region.trim(), val: mile[region].trim()});
+  }
+  
+  orderArray.sort(function(a,b) { return a.val - b.val; });
+  
+  for (var j=0; j<orderArray.length; j++){
       
-    console.log(region);
-//    console.log(mile[region]);
-    console.log(coeficient);
-    console.log(~~(coeficient*10));
-//    console.log(mile[region]);
-//    console.log(mile['Vkupno']);
-//    feature.element.setAttribute("id", "id"+i);
+      for (var i = 0; i < e.features.length; i++) {
+            var feature = e.features[i],
+                regionName = feature.data.properties.title;
+        
+            if (regionName == orderArray[j].name){
+                feature.element.setAttribute("class", "q" + j + "-" + 8);
+                feature.element.setAttribute("title", regionName + ": " + orderArray[j].val);
+            }
+      }
   }
 }
 
