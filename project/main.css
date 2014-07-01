@@ -1,0 +1,7 @@
+body {
+    background: #E6E6E6;
+}
+.layer path {
+    fill: none;
+    vector-effect: non-scaling-stroke;
+}
