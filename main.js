@@ -14,8 +14,9 @@ var orderArray = new Array();
 
 var po = org.polymaps;
 
+var svg = po.svg("svg"); svg.setAttribute('width', '100%'); svg.setAttribute('height', '100%');
 var map = po.map()
-    .container(document.getElementById("map").appendChild(po.svg("svg")))
+    .container(document.getElementById("map").appendChild(svg))
     .center({lat: 41.918, lon: 22.120})
     .zoom(8.50)
     .add(po.interact())
