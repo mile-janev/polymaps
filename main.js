@@ -64,6 +64,8 @@ function load(e) {
 $(document).ready(function() {
     $("#mapSwitcher a").click(function(e){
         e.preventDefault();
+        $("#user").html($(this).html());
+        
         fileName = $(this).attr("rel");
         
         myFile = tsv("json/" + fileName)

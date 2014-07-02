@@ -14,3 +14,18 @@ body {
 #map{
     height: 100%;
 }
+#headerWrapper{
+    float: left;
+    width: 100%;
+}
+#mapSwitcher{
+    float: left;
+}
+#mapSwitcher a{
+    
+}
+#user{
+    float: left;
+    font-weight: bold;
+    padding-left: 50px;
+}
