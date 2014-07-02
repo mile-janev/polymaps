@@ -1,4 +1,4 @@
-var fileName = "mile.tsv";//suzana.tsv
+var fileName = "mile.tsv";
 
 var myFile = tsv("json/" + fileName)
     .key(function(l) { return l[1]; })
@@ -44,7 +44,7 @@ function load(e) {
 
         orderArray.push({name: region.trim(), val: myFile[region].trim()});
     }
-
+        
     orderArray.sort(function(a,b) { return a.val - b.val; });
 
     for (var j=0; j<orderArray.length; j++){
@@ -61,3 +61,19 @@ function load(e) {
     }
 }
 
+$(document).ready(function() {
+    $("#mapSwitcher a").click(function(e){
+        e.preventDefault();
+        fileName = $(this).attr("rel");
+        
+        myFile = tsv("json/" + fileName)
+            .key(function(l) { return l[1]; })
+            .value(function(l) { return l[2].replace(/,/g, ""); })
+            .map();
+            
+        map.add(po.geoJson()
+            .url("json/json.geojson")
+            .on("load", load)
+            );
+    })
+});
