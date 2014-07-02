@@ -1,11 +1,6 @@
-/* Mile */
-var mile = tsv("json/mile.tsv")
-    .key(function(l) { return l[1]; })
-    .value(function(l) { return l[2].replace(/,/g, ""); })
-    .map();
-    
-/* Suzana */
-var suzana = tsv("json/suzana.tsv")
+var fileName = "mile.tsv";//suzana.tsv
+
+var myFile = tsv("json/" + fileName)
     .key(function(l) { return l[1]; })
     .value(function(l) { return l[2].replace(/,/g, ""); })
     .map();
@@ -47,7 +42,7 @@ function load(e) {
         var feature = e.features[i],
         region = feature.data.properties.title;
 
-        orderArray.push({name: region.trim(), val: mile[region].trim()});
+        orderArray.push({name: region.trim(), val: myFile[region].trim()});
     }
 
     orderArray.sort(function(a,b) { return a.val - b.val; });
