@@ -54,14 +54,16 @@ function load(e) {
                 regionName = feature.data.properties.title;
 
             if (regionName == orderArray[j].name){
-                feature.element.setAttribute("class", "q" + j + "-" + 8);
+                feature.element.setAttribute("class", "q" + j + "-" + 8 + " " + "regionArea");
                 feature.element.setAttribute("title", regionName + ": " + orderArray[j].val);
+                feature.element.setAttribute("rel", $("#user").html() + ":" + regionName + ":" + orderArray[j].val);
             }
         }
     }
 }
 
 $(document).ready(function() {
+    
     $("#mapSwitcher a").click(function(e){
         e.preventDefault();
         $("#user").html($(this).html());
@@ -78,4 +80,5 @@ $(document).ready(function() {
             .on("load", load)
             );
     })
+    
 });
