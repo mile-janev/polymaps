@@ -12,7 +12,7 @@ var po = org.polymaps;
 var svg = po.svg("svg"); svg.setAttribute('width', '100%'); svg.setAttribute('height', '100%');
 var map = po.map()
     .container(document.getElementById("map").appendChild(svg))
-    .center({lat: 41.918, lon: 22.120})
+    .center({lat: 41.6225, lon: 21.7820})
     .zoom(8.50)
     .add(po.interact())
     .add(po.hash());
@@ -55,17 +55,42 @@ function load(e) {
 
             if (regionName == orderArray[j].name){
                 feature.element.setAttribute("class", "q" + j + "-" + 8 + " " + "regionArea");
-                feature.element.setAttribute("title", regionName + ": " + orderArray[j].val);
+                feature.element.setAttribute("title", $("#user").html() + ", " + regionName + ", " + orderArray[j].val);
                 feature.element.setAttribute("rel", $("#user").html() + ":" + regionName + ":" + orderArray[j].val);
+                
+                feature.element.setAttribute("onmouseover", "showTooltip('" + $("#user").html() + "', '" + feature.data.properties.description + "', '" + orderArray[j].val + "', '" + myFile["Vkupno"] + "')");
+                feature.element.setAttribute("onmouseout", "hideTooltip();");
             }
         }
     }
+}
+
+function showTooltip(user, region, current, total){
+    $("#myBalloon .content").html(
+        "Статистика за: " + user + "<br />" +
+        "Регион: " + region + "<br />" +
+        "Застапеност: " + current + " од " + total
+    );
+    
+    $( "body" ).mousemove(function( event ) {
+        $("#myBalloon").css("left", event.pageX-33);
+        $("#myBalloon").css("top", event.pageY-90);
+    });
+    $("#myBalloon").show();
+}
+
+function hideTooltip(){
+    $("#myBalloon").hide();
 }
 
 $(document).ready(function() {
     
     $("#mapSwitcher a").click(function(e){
         e.preventDefault();
+        
+        $("#mapSwitcher a").removeClass("active");
+        $(this).addClass("active");
+        
         $("#user").html($(this).html());
         
         fileName = $(this).attr("rel");

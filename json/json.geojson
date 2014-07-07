@@ -14,7 +14,7 @@
                     },
                 "properties":
                     {
-                        "description":"Istocen region",
+                        "description":"Источен",
                         "fill":"#1087bf",
                         "fill-opacity":0.2,
                         "id":"marker-hwwofjkw0",
@@ -38,7 +38,7 @@
                     },
                 "properties":
                     {
-                        "description":"Jugoistocen region",
+                        "description":"Југоисточен",
                         "fill":"#1087bf",
                         "fill-opacity":0.2,
                         "id":"marker-hwwohi281",
@@ -62,7 +62,7 @@
                     },
                 "properties":
                     {
-                        "description":"Severoistocen region",
+                        "description":"Североисточен",
                         "fill":"#1087bf",
                         "fill-opacity":0.2,
                         "id":"marker-hwwojhqi2",
@@ -86,7 +86,7 @@
                     },
                 "properties":
                     {
-                        "description":"Skopski region",
+                        "description":"Скопски",
                         "fill":"#1087bf",
                         "fill-opacity":0.2,
                         "id":"marker-hwwokupc3",
@@ -110,7 +110,7 @@
                     },
                 "properties":
                     {
-                        "description":"Vardarski region",
+                        "description":"Вардарски",
                         "fill":"#1087bf",
                         "fill-opacity":0.2,
                         "id":"marker-hwwomzal4",
@@ -134,7 +134,7 @@
                     },
                 "properties":
                     {
-                        "description":"Poloski region",
+                        "description":"Полошки",
                         "fill":"#1087bf",
                         "fill-opacity":0.2,
                         "id":"marker-hwwoptyk5",
@@ -158,7 +158,7 @@
                     },
                 "properties":
                     {
-                        "description":"Jugozapaden region",
+                        "description":"Југозападен",
                         "fill":"#1087bf",
                         "fill-opacity":0.2,
                         "id":"marker-hwwos0ag0",
@@ -182,7 +182,7 @@
                     },
                 "properties":
                     {
-                        "description":"Pelagoniski region",
+                        "description":"Пелагониски",
                         "fill":"#1087bf",
                         "fill-opacity":0.2,
                         "id":"marker-hwwot3m71",

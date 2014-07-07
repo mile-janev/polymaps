@@ -9,18 +9,23 @@
         <script type="text/javascript" src="tsv.js"></script>
         <link rel="stylesheet" type="text/css" href="colorbrewer.css">
         <link rel="stylesheet" type="text/css" href="main.css">
-
     </head>
     <body>
-        <div id="headerWrapper">
-            <div id="mapSwitcher">
-                <a href="#" rel="mile.tsv">Миле</a>
-                <a href="#" rel="suzana.tsv">Сузана</a>
-            </div>
+        <div id="nameVisualized">
             <div id="user">Миле</div>
         </div>
-        <div id="myBalloon">Ova e sodrzina</div>
+        <div id="mapSwitcher">
+            <a href="#" rel="mile.tsv" class="active">Миле</a>
+            <a href="#" rel="suzana.tsv">Сузана</a>
+            <a href="#" rel="zivka.tsv">Живка</a>
+            <a href="#" rel="janev.tsv">Јанев</a>
+        </div>
+        <div id="myBalloon">
+            <span class="content"></span>
+            <span class="arrow"></span>
+        </div>
         <div id="map"></div>
+        <div id="infoBox">* Потемните бои означуваат поголема застапеност на даденото име/презиме во регионот</div>
         <script type="text/javascript" src="main.js"></script>
     </body>
 </html>

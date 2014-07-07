@@ -7,6 +7,9 @@ html, body{
 body {
     background: #E6E6E6;
 }
+a {
+   outline: 0;
+}
 .layer path {
     fill: none;
     vector-effect: non-scaling-stroke;
@@ -14,24 +17,71 @@ body {
 #map{
     height: 100%;
 }
-#headerWrapper{
-    float: left;
-    width: 100%;
+#nameVisualized {
+    left: 43%;
+    position: fixed;
+    text-align: center;
 }
 #mapSwitcher{
-    float: left;
+    width: 150px;
+    position: fixed;
+    right: 0;
+    background: #000000;
+    opacity: 0.5;
+    margin-top: 30px;
 }
-#mapSwitcher a{
-    
+#mapSwitcher a {
+    float: left;
+    margin-left: 0;
+    padding: 5px 10px;
+    width: 100%;
+    color: #ff0000;
+}
+#mapSwitcher a:hover, .active {
+    background: #ff0000;
+    color: #0000ff !important;
 }
 #user{
     float: left;
     font-weight: bold;
-    padding-left: 50px;
+    width: 120px;
+    color: #ff0000;
+    background: #000000;
+    opacity: 0.5;
+    padding: 5px 30px;
 }
 #myBalloon{
-    width: 100px;
-    height: 50px;
-    background: #ffffff;
+    width: 200px;
+    height: 65px;
+    background: #000000;
     display: none;
+    position: absolute;
+    color: #ff0000;
+    opacity: 0.5;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 5px 30px;
+}
+#myBalloon .arrow{
+    position: absolute;
+    left: 20px;
+    bottom: -15px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 15px 0 15px;
+    border-color: #000000 transparent transparent transparent;
+
+}
+.regionArea{
+    cursor: pointer;
+}
+#infoBox{
+    background: #000000;
+    color: #ff0000;
+    position: absolute;
+    opacity: 0.5;
+    bottom: 0;
+    padding: 5px 10px;
 }
