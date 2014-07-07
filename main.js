@@ -55,7 +55,6 @@ function load(e) {
 
             if (regionName == orderArray[j].name){
                 feature.element.setAttribute("class", "q" + j + "-" + 8 + " " + "regionArea");
-                feature.element.setAttribute("title", $("#user").html() + ", " + regionName + ", " + orderArray[j].val);
                 feature.element.setAttribute("rel", $("#user").html() + ":" + regionName + ":" + orderArray[j].val);
                 
                 feature.element.setAttribute("onmouseover", "showTooltip('" + $("#user").html() + "', '" + feature.data.properties.description + "', '" + orderArray[j].val + "', '" + myFile["Vkupno"] + "')");
