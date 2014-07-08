@@ -72,8 +72,8 @@ function showTooltip(user, region, current, total){
     );
     
     $( "body" ).mousemove(function( event ) {
-        $("#myBalloon").css("left", event.pageX-33);
-        $("#myBalloon").css("top", event.pageY-90);
+        $("#myBalloon").css("left", event.pageX-35);
+        $("#myBalloon").css("top", event.pageY-93);
     });
     $("#myBalloon").show();
 }
