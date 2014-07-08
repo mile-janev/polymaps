@@ -85,3 +85,26 @@ a {
     bottom: 0;
     padding: 5px 10px;
 }
+
+.zoom{
+    visibility: visible;
+    cursor: pointer;
+}
+.compass .back {
+    fill: #eee;
+    fill-opacity: 0.8;
+}
+.compass .direction {
+    fill: none;
+}
+.compass .zoom .chevron {
+    stroke-width: 4px;
+}
+.compass .chevron {
+    fill: none;
+    stroke: #999;
+}
+.compass .fore {
+    stroke: #999;
+    stroke-width: 1.5px;
+}
