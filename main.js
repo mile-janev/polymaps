@@ -36,6 +36,7 @@ map.add(po.compass()
     
 function load(e) {
 
+//Kreirame niza od objekti i gi podreduvame po golemina (start)
     var orderArray = new Array();//Ponovo ja reinicijaliziram bidejki funkcijata se povikuva pri zoom
     
     for (var i = 0; i < e.features.length; i++) {
@@ -44,8 +45,9 @@ function load(e) {
 
         orderArray.push({name: region.trim(), val: myFile[region].trim()});
     }
-        
+    
     orderArray.sort(function(a,b) { return a.val - b.val; });
+//Kreirame niza od objekti i gi podreduvame po golemina (end)
 
     for (var j=0; j<orderArray.length; j++){
 
