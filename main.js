@@ -1,6 +1,6 @@
 var fileName = "mile.tsv";
 
-var myFile = tsv("json/" + fileName)
+var myFile = tsv("names/" + fileName)
     .key(function(l) { return l[1]; })
     .value(function(l) { return l[2].replace(/,/g, ""); })
     .map();
@@ -25,7 +25,7 @@ map.add(po.image()
     );
     
 map.add(po.geoJson()
-    .url("json/json.geojson")
+    .url("json.geojson")
     .on("load", load)
     );
     
@@ -94,13 +94,13 @@ $(document).ready(function() {
         
         fileName = $(this).attr("rel");
         
-        myFile = tsv("json/" + fileName)
+        myFile = tsv("names/" + fileName)
             .key(function(l) { return l[1]; })
             .value(function(l) { return l[2].replace(/,/g, ""); })
             .map();
             
         map.add(po.geoJson()
-            .url("json/json.geojson")
+            .url("json.geojson")
             .on("load", load)
             );
     })
