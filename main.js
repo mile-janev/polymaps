@@ -15,7 +15,7 @@ var map = po.map()
     .center({lat: 41.6225, lon: 21.7820})
     .zoom(8.50)
     .add(po.interact())
-    .add(po.hash());
+    .add(po.hash());//Za parametrite da se prenesuvat so url, na toj nacin mozeme da go kopirame zumot, centarot i slicno
     
 map.add(po.image()
     .url(po
@@ -30,9 +30,9 @@ map.add(po.geoJson()
     );
     
 map.add(po.compass()
-    .pan("none"));
+    .pan("none"));//Drag, zoom support se ovozmozuva
     
-    map.container().setAttribute("class", "YlOrRd");
+    map.container().setAttribute("class", "YlOrRd");//Ja setirame klasata od colorbrewer na elementot mapa
     
 function load(e) {
 
