@@ -36,7 +36,7 @@ map.add(po.compass()
     
 function load(e) {
 
-//Kreirame niza od objekti i gi podreduvame po golemina (start)
+//Kreirame niza od objekti (region->vrednost) i gi podreduvame po golemina (start)
     var orderArray = new Array();//Ponovo ja reinicijaliziram bidejki funkcijata se povikuva pri zoom
     
     for (var i = 0; i < e.features.length; i++) {
@@ -47,15 +47,15 @@ function load(e) {
     }
     
     orderArray.sort(function(a,b) { return a.val - b.val; });
-//Kreirame niza od objekti i gi podreduvame po golemina (end)
+//Kreirame niza od objekti (region->vrednost) i gi podreduvame po golemina (end)
 
-    for (var j=0; j<orderArray.length; j++){
+    for (var j=0; j<orderArray.length; j++){//Ja izminuvame prethodno kreiranata niza od objekti
 
-        for (var i = 0; i < e.features.length; i++) {
+        for (var i = 0; i < e.features.length; i++) {//Gi izminuvame elementite od mapata (regionite)
             var feature = e.features[i],
                 regionName = feature.data.properties.title;
 
-            if (regionName == orderArray[j].name){
+            if (regionName == orderArray[j].name){//Dokolku se sovpagjaat regionot od podredenata niza i od mapata, dodaj mu klasa za da se oboi
                 feature.element.setAttribute("class", "q" + j + "-" + 8 + " " + "regionArea");
                 feature.element.setAttribute("rel", $("#user").html() + ":" + regionName + ":" + orderArray[j].val);
                 
@@ -63,7 +63,9 @@ function load(e) {
                 feature.element.setAttribute("onmouseout", "hideTooltip();");
             }
         }
+        
     }
+    
 }
 
 function showTooltip(user, region, current, total){
